@@ -4,11 +4,13 @@ import {
   Route,
   Link
 } from "react-router-dom";
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './App.css';
 import Header from './components/Header'
-import Notes from './pages/Notes'
-import Note from './pages/Note'
+import Recipes from './pages/Recipes'
+import Recipe from './pages/Recipe'
+
 
 function App() {
 
@@ -17,8 +19,8 @@ function App() {
       <div className="container dark">
         <div className="app">
           <Header />
-          <Route path="/" exact component={Notes} />
-          <Route path="/note/:id" component={Note} />
+          <Route path="/" exact component={Recipes} />
+          <Route path="/recipe/:id" component={Recipe} />
         </div>
       </div>
     </Router>

@@ -1,48 +1,72 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
+let getDish = (recipe) => {
+  let dish = recipe.dish;
+  console.log(dish);
+  return dish;
+};
 
-let getTime = (note) => {
-    return new Date(note.updated).toLocaleDateString()
-}
+let getImage = (recipe) => {
+  let image = recipe.image;
+  console.log(image);
+  return <img src={image} />;
+};
 
+let getIngredients = (recipe) => {
+  let ingredients = recipe.ingredients;
+  console.log(ingredients);
+  return (
+    <div className="container">
+      {ingredients.map((ingredients, i) => (
+        <div className="row" key={i}>
+          {console.log(ingredients)}
+          <p className="mb-0">{ingredients}</p>
+        </div>
+      ))}
+    </div>
+  );
+};
 
-let getTitle = (note) => {
-    //spit by new lines and just get the first line
-    //split will make a list of each line and will only pull on the first line by index zero
-    const title = note.body.split('\n')[0]
-    if (title.length > 45) {
-        return title.slice(0, 45)
-    }
-    return title
-}
+let getPreparations = (recipe) => {
+  let preparations = recipe.preparations;
+  console.log(preparations);
 
+  return (
+    <div>
+      {preparations.map((steps, i) => (
+        <div key={i}>
+          {console.log(steps.step)}
+          <p>{steps.step}</p>
+        </div>
+      ))}
+    </div>
+  );
+};
 
-let getContent = (note) => {
-    //Get content after title
-    let title = getTitle(note)
-    let content = note.body.replaceAll('\n', '')
-    content = content.replaceAll(title, '')
-
-    //Slice content and add three dots in over 45 characters to show there is more
-    if (content.length > 50) {
-        return content.slice(0, 50) + '. . .'
-    } else {
-        return content
-    }
-
-}
-
-
-const ListItem = ({ note }) => {
-    return (
-        <Link to={`/note/${note.id}`}>
-            <div className="notes-list-item">
-                <h3>{getTitle(note)}</h3>
-                <p>{getContent(note)}<span>{getTime(note)}</span></p>
-            </div>
-        </Link>
-    )
-}
-
-export default ListItem
+const ListItem = ({ recipe }) => {
+  console.log(recipe);
+  return (
+    <div className="item">
+      <Link className="item-link" to={`/recipe/${recipe.id}`}>
+        <div className="recipes-list-item">
+          <div className="dish-name">
+            <h4>{getDish(recipe)}</h4>
+          </div>
+        </div>
+      </Link>
+      <div className="dish-image">
+        <div>{getImage(recipe)}</div>
+      </div>
+      <div className="ingredients">
+        <h4>Ingredients</h4>
+        <div>{getIngredients(recipe)}</div>
+      </div>
+      <div className="preparations">
+        <h4>Preparations</h4>
+        <div>{getPreparations(recipe)}</div>
+      </div>
+    </div>
+  );
+};
+export default ListItem;

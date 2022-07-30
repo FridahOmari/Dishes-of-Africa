@@ -1,9 +1,65 @@
 {
-  "notes": [
+  "recipes": [
     {
-      "body": "I-do\nReact app made with ❤️ by Vaibhav.",
-      "updated": "2021-11-02T07:24:11.974Z",
-      "id": 1
+      "dish": "Wali wa nazi",
+      "image": "./images/wali.webp",
+      "ingredients": ["3 cups water", "Oil", "Salt", "1 cup coconut milk","1 cup Rice"],
+      "preparations": [
+        {
+          "step": "Clean and wash rice"
+        },
+        {
+          "step": "Bring the coconut milk and water to boil"
+        },
+        {
+          "step":"Add oil to the boiling mixture"
+        },
+        {
+          "step": "Add salt to taste"
+        },
+        {
+          "step": "When boiling, pour in the rice and slow cook till ready"
+        }
+      ]
+    },
+    {
+      "dish": "Ugali",
+      "image": "./images/ugali.jpg",
+      "ingredients": ["Water", "Maize meal"],
+      "preparations": [
+        {
+          "step": "Heat water over medium heat in a deep pan. Make sure the pan has a handle."
+        },
+        {
+          "step": "Sprinkle about 1 tbsp of maize meal while the water comes to a boil."
+        },
+        {
+          "step": "Add the maize meal and keep stirring with a strong wooden spoon."
+        },
+        {
+          "step": "Keep stirring and keep pressing the mixture against the sides of the pan to break up the lumps."
+        },
+        {
+          "step": "Allow it to cook for 3-4 minutes. At this point transfer it to a platter from the pan and pat it down into a shape."
+        }
+      ]
+    },
+    {
+      "dish": "Choma",
+      "image": "./images/choma.jpg",
+      "ingredients": ["Goat or beef meat", "Oil", "Salt", "Warm water"],
+      "preparations": [
+        {
+          "step": "Prepare your grill and have it hot. Toss the meat with the oil, then thread it on skewers."
+        },
+        {
+          "step": "Grill the skewered meat, basting it occassionally with the salt water, until it is cooked to your desired doneness."
+        },
+        {
+          "step": "Remove the meat from the skewers and serve with kachumbari salad and ugali."
+        }
+        
+      ]
     }
   ]
 }
